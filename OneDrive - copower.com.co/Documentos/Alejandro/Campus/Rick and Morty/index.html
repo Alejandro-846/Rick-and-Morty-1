@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty - Buscador de Personajes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="starCanvas"></canvas>
+    <div id="stars" class="stars-container"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Rick and Morty</h1>
+            <p>Buscador de Personajes</p>
+        </header>
+
+        <div class="main-layout">
+            <div class="search-sidebar">
+                <div class="search-section">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Busca un personaje (ej: Rick, Morty, Summer)..."
+                        autocomplete="off"
+                    >
+                    <button id="searchBtn">Buscar</button>
+                </div>
+
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Cargando personajes...</p>
+                </div>
+
+                <div id="error" class="error hidden"></div>
+
+                <div id="resultsInfo" class="results-info hidden">
+                    <p id="resultCount"></p>
+                    <div id="pagination" class="pagination"></div>
+                </div>
+            </div>
+
+            <div class="results-sidebar">
+                <div id="characters" class="characters-grid"></div>
+                <div id="pagination-bottom" class="pagination hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de detalle del personaje -->
+    <div id="characterModal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button id="closeModal" class="close-button">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="" class="modal-image">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalName"></h2>
+                    <div class="modal-details">
+                        <div class="modal-detail-row">
+                            <span class="modal-label">Estado:</span>
+                            <span id="modalStatus" class="modal-value"></span>
+                        </div>
+                        <div class="modal-detail-row">
+                            <span class="modal-label">Especie:</span>
+                            <span id="modalSpecies" class="modal-value"></span>
+                        </div>
+                        <div class="modal-detail-row">
+                            <span class="modal-label">Género:</span>
+                            <span id="modalGender" class="modal-value"></span>
+                        </div>
+                        <div class="modal-detail-row">
+                            <span class="modal-label">Tipo:</span>
+                            <span id="modalType" class="modal-value"></span>
+                        </div>
+                        <div class="modal-detail-row">
+                            <span class="modal-label">Origen:</span>
+                            <span id="modalOrigin" class="modal-value"></span>
+                        </div>
+                        <div class="modal-detail-row">
+                            <span class="modal-label">Ubicación:</span>
+                            <span id="modalLocation" class="modal-value"></span>
+                        </div>
+                        <div class="modal-detail-row">
+                            <span class="modal-label">Episodios:</span>
+                            <span id="modalEpisodes" class="modal-value"></span>
+                        </div>
+                    </div>
+                    <div id="modalStatusBadge" class="status-badge"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="stars.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
